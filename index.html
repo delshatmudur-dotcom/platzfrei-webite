@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlatzFrei | Entrümpelung leicht gemacht</title>
+    <meta name="description" content="Ihr Ansprechpartner für Wohnungs-, Keller- und Garagenentrümpelungen. Fragen Sie unverbindlich an.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">Platz<span>Frei.</span></a>
+
+        <div class="nav-links">
+            <a href="#leistungen">Leistungen</a>
+            <a href="#ueber-uns">Über uns</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <p class="eyebrow">ORDNUNG BEGINNT MIT PLATZ</p>
+
+        <h1>Wir schaffen Platz.<br>
+        Sie gewinnen Freiheit.</h1>
+
+        <p class="hero-text">
+            Ob Keller, Garage oder Wohnung:
+            Wir helfen Ihnen, wieder Platz zu schaffen.
+        </p>
+
+        <a href="#kontakt" class="button">Jetzt Anfrage stellen →</a>
+    </header>
+
+    <main>
+        <section id="leistungen">
+            <p class="eyebrow">WAS WIR ANBIETEN</p>
+            <h2>Unsere Leistungen</h2>
+
+            <div class="services">
+                <article class="service-card">
+                    <div class="service-icon">⌂</div>
+                    <h3>Wohnungen</h3>
+                    <p>Unterstützung bei der Räumung von Wohnungen und einzelnen Räumen.</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">▤</div>
+                    <h3>Keller und Dachboden</h3>
+                    <p>Wir helfen dabei, vollgestellte Abstellflächen wieder nutzbar zu machen.</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">⌂</div>
+                    <h3>Garagen</h3>
+                    <p>Mehr Übersicht und Platz in Ihrer Garage.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="ueber-uns" class="about">
+            <p class="eyebrow">EINFACH UND UNKOMPLIZIERT</p>
+            <h2>Mehr Platz. Weniger Stress.</h2>
+            <p>
+                Jedes Projekt beginnt mit einem Gespräch.
+                Gemeinsam klären wir, was gebraucht wird,
+                und besprechen die nächsten Schritte.
+            </p>
+        </section>
+
+
+
+<section id="kontakt" class="contact">
+    <p class="eyebrow">DER ERSTE SCHRITT</p>
+
+    <h2>Fordern Sie eine Anfrage an</h2>
+
+    <p>
+        Beschreiben Sie kurz Ihr Anliegen.
+        Wir melden uns wegen der nächsten Schritte.
+    </p>
+
+    <form class="contact-form" id="anfrageformular">
+
+        <label for="name">Ihr Name</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Max Mustermann"
+            required
+        >
+
+        <label for="email">Ihre E-Mail-Adresse</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="name@beispiel.de"
+            required
+        >
+
+        <label for="leistung">Was soll entrümpelt werden?</label>
+        <select id="leistung" name="leistung" required>
+            <option value="">Bitte auswählen</option>
+            <option>Wohnung oder Haus</option>
+            <option>Keller oder Dachboden</option>
+            <option>Garage</option>
+            <option>Sonstiges</option>
+        </select>
+
+        <label for="beschreibung">Weitere Informationen</label>
+        <textarea
+            id="beschreibung"
+            name="beschreibung"
+            rows="5"
+            placeholder="Beschreiben Sie kurz Ihren Auftrag."
+        ></textarea>
+
+        <button type="submit" class="button">
+            Anfrage senden →
+        </button>
+
+        <p id="formularmeldung" class="form-message" aria-live="polite"></p>
+    </form>
+</section>
+
+
+    </main>
+
+    <footer>
+        <p>© 2026 PlatzFrei · Entrümpelung</p>
+        <p>Übungsprojekt – noch kein echtes Leistungsangebot</p>
+    </footer>
+
+</body>
+<script>
+    const formular = document.getElementById("anfrageformular");
+    const meldung = document.getElementById("formularmeldung");
+
+    formular.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        if (!formular.checkValidity()) {
+            formular.reportValidity();
+            return;
+        }
+
+        meldung.textContent =
+            "Vielen Dank! Das Formular wurde erfolgreich ausgefüllt. Es wurde noch keine Anfrage versendet.";
+
+        meldung.style.color = "#24613e";
+
+    });
+</script>
+
+</html>

@@ -1,0 +1,282 @@
+
+/* GRUNDLAGEN */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8f5;
+    color: #202b24;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #ffffff;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #173d2b;
+}
+
+.logo span {
+    color: #c49a54;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #34453a;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #c49a54;
+}
+
+/* STARTBEREICH */
+.hero {
+    padding: 120px 20px 130px;
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(13, 39, 25, 0.82),
+            rgba(13, 39, 25, 0.88)
+        ),
+        url("raum.jpg") center / cover no-repeat;
+}
+
+.eyebrow {
+    color: #b78d4d;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 62px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero-text {
+    max-width: 550px;
+    margin: 0 auto 30px;
+    color: #e0e9e2;
+    font-size: 17px;
+}
+
+.button {
+    display: inline-block;
+    background: #c49a54;
+    color: #172b1e;
+    padding: 14px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.button:hover {
+    background: #d9b574;
+    transform: translateY(-2px);
+}
+
+/* INHALT */
+main {
+    max-width: 1120px;
+    margin: auto;
+    padding: 65px 25px;
+}
+
+section {
+    margin-bottom: 75px;
+    scroll-margin-top: 25px;
+}
+
+section h2 {
+    font-size: 34px;
+    line-height: 1.25;
+    margin: 10px 0 30px;
+    color: #173d2b;
+}
+
+/* LEISTUNGSKARTEN */
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px 25px;
+    border: 1px solid #e7eae4;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(23, 61, 43, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(23, 61, 43, 0.1);
+}
+
+.service-icon {
+    font-size: 32px;
+    color: #c49a54;
+}
+
+.service-card h3 {
+    color: #173d2b;
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+.service-card p,
+.about > p:not(.eyebrow),
+.contact > p:not(.eyebrow) {
+    color: #657067;
+}
+
+/* ÜBER UNS */
+.about {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.about > p:not(.eyebrow) {
+    max-width: 700px;
+}
+
+/* KONTAKT */
+.contact {
+    background: #eaf0e9;
+    padding: 45px 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 15px;
+}
+
+.contact-note {
+    font-size: 13px;
+}
+
+/* FUSSZEILE */
+footer {
+    background: #102b1d;
+    color: #dce5de;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 13px;
+}
+
+/* HANDYANSICHT */
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 75px 20px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 45px 18px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    .about {
+        padding: 25px;
+    }
+}
+
+/* KONTAKTFORMULAR */
+.contact-form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #243229;
+    margin-top: 8px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5ddd4;
+    border-radius: 6px;
+    background: #ffffff;
+    font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #24613e;
+    outline-offset: 2px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    cursor: pointer;
+    border: none;
+    font: inherit;
+    margin-top: 15px;
+}
+
+.form-message {
+    font-size: 14px;
+}

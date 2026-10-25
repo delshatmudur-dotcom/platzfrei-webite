@@ -84,7 +84,7 @@
         Wir melden uns wegen der nächsten Schritte.
     </p>
 
-    <form class="contact-form" id="anfrageformular">
+    <form class="contact-form" id="anfrageformular" action="https://formsubmit.co/delshatmudur@gmail.com" method="POST">
 
         <label for="name">Ihr Name</label>
         <input
@@ -138,24 +138,17 @@
     </footer>
 
 </body>
+
 <script>
     const formular = document.getElementById("anfrageformular");
-    const meldung = document.getElementById("formularmeldung");
 
     formular.addEventListener("submit", function(event) {
-        event.preventDefault();
-
         if (!formular.checkValidity()) {
+            event.preventDefault();
             formular.reportValidity();
-            return;
         }
-
-        meldung.textContent =
-            "Vielen Dank! Das Formular wurde erfolgreich ausgefüllt. Es wurde noch keine Anfrage versendet.";
-
-        meldung.style.color = "#24613e";
-
     });
 </script>
+
 
 </html>
